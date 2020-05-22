@@ -1,0 +1,3 @@
+[submodule "velociraptor"]
+	path = velociraptor
+	url = git@github.com:umbopepato/velociraptor.git

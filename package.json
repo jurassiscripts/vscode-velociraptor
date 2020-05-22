@@ -17,15 +17,16 @@
 		"jsonValidation": [
 			{
 				"fileMatch": "velociraptor.json",
-				"url": "url"
+				"url": "./out/schema.json"
 			},
 			{
 				"fileMatch": "scripts.json",
-				"url": "url"
+				"url": "./out/schema.json"
 			}
 		]
 	},
 	"scripts": {
+		"build:jsonschema": "mkdir -p out && ts-json-schema-generator --path velociraptor/src/scripts_config.ts --type ScriptsConfiguration -o out/schema.json",
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
 		"lint": "eslint src --ext ts",
@@ -43,8 +44,8 @@
 		"eslint": "^6.8.0",
 		"glob": "^7.1.6",
 		"mocha": "^7.1.2",
+		"ts-json-schema-generator": "^0.68.0",
 		"typescript": "^3.8.3",
-		"typescript-json-schema": "^0.42.0",
 		"vscode-test": "^1.3.0"
 	}
 }
