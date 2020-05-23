@@ -1,20 +1,29 @@
 {
 	"name": "vscode-velociraptor",
 	"displayName": "Velociraptor",
-	"description": "Velociraptor support for VSCode",
-	"version": "0.0.1",
+  "description": "Velociraptor support for VSCode",
+  "icon": "assets/icon.png",
+  "version": "0.0.1",
+  "publisher": "umbo",
 	"engines": {
 		"vscode": "^1.45.0"
-	},
+  },
+  "keywords": [
+    "deno",
+    "npm",
+    "scripts"
+  ],
 	"categories": [
 		"Other"
 	],
-	"activationEvents": [
-		"onCommand:vr.run"
-	],
+  "activationEvents": [
+    "*",
+    "onCommand:vr.enable",
+    "onCommand:vr.disable"
+  ],
 	"main": "./out/extension.js",
 	"contributes": {
-		"jsonValidation": [
+    "jsonValidation": [
 			{
 				"fileMatch": "velociraptor.json",
 				"url": "./out/schema.json"
@@ -41,12 +50,35 @@
 				"fileMatch": "scripts.yml",
 				"url": "./out/schema.json"
 			}
-		]
+    ],
+    "commands": [
+      {
+          "title": "Enable Velociraptor",
+          "command": "vr.enable",
+          "category": "Velociraptor"
+      },
+      {
+          "title": "Disable Velociraptor",
+          "command": "vr.disable",
+          "category": "Velociraptor"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Velociraptor",
+      "properties": {
+        "vr.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Velociraptor support"
+        }
+      }
+    }
 	},
 	"scripts": {
 		"build:jsonschema": "mkdir -p out && ts-json-schema-generator --path velociraptor/src/scripts_config.ts --type ScriptsConfiguration -o out/schema.json",
 		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
+		"compile": "tsc -p ./ && npm run build:jsonschema",
 		"lint": "eslint src --ext ts",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
@@ -66,5 +98,9 @@
 		"typescript": "^3.8.3",
 		"vscode-test": "^1.3.0"
   },
-  "extensionDependencies": ["redhat.vscode-yaml"]
+  "extensionDependencies": ["redhat.vscode-yaml"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umbopepato/vscode-velociraptor"
+  }
 }
