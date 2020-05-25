@@ -6,7 +6,7 @@
 
 ## Requirements
 
-This extension depends on `redhat.yaml` for yaml code assistance.
+This extension depends on `redhat.vscode-yaml` for yaml code assistance.
 
 ## License
 
