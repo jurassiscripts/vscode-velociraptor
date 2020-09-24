@@ -78,7 +78,7 @@
 	"scripts": {
 		"build:jsonschema": "mkdir -p out && ts-json-schema-generator --path velociraptor/src/scripts_config.ts --type ScriptsConfiguration -o out/schema.json",
 		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./ && npm run build:jsonschema",
+		"compile": "tsc && npm run build:jsonschema",
 		"lint": "eslint src --ext ts",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
