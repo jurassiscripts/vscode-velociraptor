@@ -4,9 +4,7 @@
 
 - Code assistance for script configuration files (both `yaml` and `json`).
 
-## Requirements
-
-This extension depends on `redhat.vscode-yaml` for yaml code assistance.
+![code assistance](./assets/code-assistance.png)
 
 ## License
 
