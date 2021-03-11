@@ -3,7 +3,7 @@
 	"displayName": "Velociraptor",
 	"description": "Velociraptor support for VSCode",
 	"icon": "assets/icon.png",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"publisher": "umbo",
 	"engines": {
 		"vscode": "^1.45.0"

@@ -1,3 +1,9 @@
+## [0.4.0](https://github.com/jurassiscripts/vscode-velociraptor/compare/v0.3.0...v0.4.0) (2021-03-11)
+
+### Features
+
+* update velociraptor to `1.0.0-beta.17` ([fd667e2](https://github.com/jurassiscripts/vscode-velociraptor/commit/fd667e22909951b0e27ef40d119a38aa69efe2e0))
+
 ## [0.3.0](https://github.com/umbopepato/vscode-velociraptor/compare/v0.2.0...v0.3.0) (2020-09-24)
 
 ### Feaures
